@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveFix | Smart Vehicle Care</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- AUTH PAGE -->
+  <section id="authPage" class="auth-page">
+    <div class="auth-image">
+      <div class="shade"></div>
+      <div class="auth-brand"><span>✦</span> DriveFix</div>
+      <div class="hero-copy">
+        <p>SMART VEHICLE CARE</p>
+        <h1>Fix it.<br><em>Drive on.</em></h1>
+        <span>Simple vehicle registration, problem detection and repair guidance in one place.</span>
+      </div>
+      <div class="hero-stat"><b>10K+</b><small>vehicles serviced</small></div>
+    </div>
+
+    <div class="auth-side">
+      <div class="auth-box">
+        <div class="mobile-brand"><span>✦</span> DriveFix</div>
+        <div class="auth-tabs">
+          <button id="loginTab" class="active">Login</button>
+          <button id="signupTab">Sign up</button>
+        </div>
+
+        <form id="loginForm">
+          <h2>Welcome back.</h2>
+          <p>Enter your details to continue.</p>
+          <label>Email</label>
+          <input id="loginEmail" type="email" placeholder="you@example.com" required>
+          <label>Password</label>
+          <input id="loginPassword" type="password" placeholder="••••••••" required>
+          <button class="main-btn" type="submit">Continue <span>→</span></button>
+          <div id="loginMsg" class="msg"></div>
+        </form>
+
+        <form id="signupForm" class="hide">
+          <h2>Create an account.</h2>
+          <p>Start your digital vehicle record.</p>
+          <label>Full name</label>
+          <input id="signupName" placeholder="Your name" required>
+          <label>Email</label>
+          <input id="signupEmail" type="email" placeholder="you@example.com" required>
+          <label>Password</label>
+          <input id="signupPassword" type="password" minlength="6" placeholder="Minimum 6 characters" required>
+          <button class="main-btn" type="submit">Create account <span>→</span></button>
+          <div id="signupMsg" class="msg"></div>
+        </form>
+
+        <small class="privacy">Demo project • Your data stays in this browser.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section id="appPage" class="app-page hide">
+    <header class="top">
+      <a class="brand" href="#"><span>✦</span> DriveFix</a>
+      <div class="top-right"><span id="userName"></span><button id="logout">Logout</button></div>
+    </header>
+
+    <div class="app">
+      <aside class="side">
+        <div class="side-title">YOUR SERVICE</div>
+        <button class="nav active" data-go="vehicle"><i>01</i> Vehicle</button>
+        <button class="nav" data-go="problem"><i>02</i> Problem</button>
+        <button class="nav" data-go="solution"><i>03</i> Solution</button>
+        <button class="nav" data-go="summary"><i>04</i> Summary</button>
+        <div class="side-tip">
+          <span>●</span>
+          <b>DriveFix tip</b>
+          <p>Early diagnosis can prevent small problems from becoming expensive repairs.</p>
+        </div>
+      </aside>
+
+      <main class="main">
+
+        <!-- VEHICLE -->
+        <section id="vehicle" class="screen active">
+          <div class="heading">
+            <div><small>STEP 01</small><h1>Tell us about your vehicle.</h1><p>We'll use these details for your service record.</p></div>
+            <div class="step-no">01 / 04</div>
+          </div>
+          <div class="split">
+            <form id="vehicleForm" class="card">
+              <div class="row">
+                <div><label>Owner name</label><input id="owner" required></div>
+                <div><label>Phone</label><input id="phone" required></div>
+              </div>
+              <div class="row">
+                <div><label>Vehicle type</label><select id="type" required><option value="">Choose</option><option>Car</option><option>Bike</option><option>Scooter</option><option>Van</option></select></div>
+                <div><label>Fuel</label><select id="fuel" required><option value="">Choose</option><option>Petrol</option><option>Diesel</option><option>CNG</option><option>Electric</option><option>Hybrid</option></select></div>
+              </div>
+              <div class="row">
+                <div><label>Make</label><input id="make" placeholder="e.g. Honda" required></div>
+                <div><label>Model</label><input id="model" placeholder="e.g. City" required></div>
+              </div>
+              <div class="row">
+                <div><label>Year</label><input id="year" type="number" min="1950" max="2026" required></div>
+                <div><label>Registration no.</label><input id="reg" placeholder="MH 01 AB 1234" required></div>
+              </div>
+              <button class="main-btn" type="submit">Save vehicle <span>→</span></button>
+            </form>
+            <div class="photo vehicle-photo">
+              <div><span>DRIVEFIX</span><h2>Your vehicle,<br>one clean record.</h2></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROBLEM -->
+        <section id="problem" class="screen">
+          <div class="heading">
+            <div><small>STEP 02</small><h1>What needs fixing?</h1><p>Pick the closest match. You can add more details below.</p></div>
+            <div class="step-no">02 / 04</div>
+          </div>
+          <div class="card">
+            <div class="problem-grid">
+              <button class="issue" data-problem="puncture"><strong>01</strong><span>🛞</span><b>Tyre puncture</b><small>Flat or losing air</small></button>
+              <button class="issue" data-problem="battery"><strong>02</strong><span>🔋</span><b>Battery</b><small>Won't start / weak</small></button>
+              <button class="issue" data-problem="brake"><strong>03</strong><span>◉</span><b>Brakes</b><small>Weak / noisy braking</small></button>
+              <button class="issue" data-problem="overheat"><strong>04</strong><span>♨</span><b>Overheating</b><small>Temperature too high</small></button>
+              <button class="issue" data-problem="engine"><strong>05</strong><span>⚙</span><b>Engine</b><small>Starting / performance</small></button>
+              <button class="issue" data-problem="ac"><strong>06</strong><span>❄</span><b>AC</b><small>Not cooling</small></button>
+              <button class="issue" data-problem="oil"><strong>07</strong><span>⌁</span><b>Oil leak</b><small>Leak / low oil</small></button>
+              <button class="issue" data-problem="electrical"><strong>08</strong><span>⌁</span><b>Electrical</b><small>Lights / wiring</small></button>
+            </div>
+            <label>What happened?</label>
+            <textarea id="details" rows="4" placeholder="Example: Front-left tyre is losing air every few hours..."></textarea>
+            <button id="problemNext" class="main-btn" disabled>See my solution <span>→</span></button>
+          </div>
+        </section>
+
+        <!-- SOLUTION -->
+        <section id="solution" class="screen">
+          <div class="heading">
+            <div><small>STEP 03</small><h1>Here's what we'd do.</h1><p>A quick, practical estimate based on your selected problem.</p></div>
+            <div class="step-no">03 / 04</div>
+          </div>
+          <div id="solutionContent"></div>
+          <div class="bottom-actions"><button class="secondary" data-go="problem">← Change problem</button><button id="saveRequest" class="main-btn">Save request <span>→</span></button></div>
+        </section>
+
+        <!-- SUMMARY -->
+        <section id="summary" class="screen">
+          <div class="heading">
+            <div><small>STEP 04</small><h1>You're all set.</h1><p>Your repair request has been saved in this browser.</p></div>
+            <div class="step-no">04 / 04</div>
+          </div>
+          <div class="done-card"><div class="check">✓</div><h2>Repair request created</h2><p>Show this summary at the workshop. The final price depends on physical inspection and vehicle-specific parts.</p></div>
+          <div id="summaryContent" class="summary"></div>
+          <div class="bottom-actions"><button id="newRequest" class="secondary">New request</button><button class="main-btn" data-go="vehicle">Back to vehicle <span>→</span></button></div>
+        </section>
+
+      </main>
+    </div>
+  </section>
+
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
